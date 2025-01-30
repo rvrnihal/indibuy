@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="style1.css">
+  <link rel="stylesheet" href="product.css">
+  <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css'>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css'>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <title>PRODUCTS</title>
+  <script src="https://kit.fontawesome.com/92d70a2fd8.js" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/js/all.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/js/all.min.js"></script>
+</head>
+<body>
+  <script src="addtocart.js"></script>
+  <nav class="navbar navbar-expand-lg" id="navbar">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="home.html" id="logo"><span id="span1">I</span>ndi<span>Buy</span></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link active" aria-current="page" href="home.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="product.html">Product</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+        </ul> 
+      </div>
+    </div>
+  </nav>
+  <!-- Cart section -->
+  
+  <div class="home">
+
+    <div class="container">
+      <div id="root">
+        <div class="sidebar">
+          <div class="head"><p>My Cart</p></div>
+          <div id="cartItem">Your cart is empty</div>
+          <div class="foot">
+            <h3>Total:</h3>
+            <h4 id="total">₹ 0</h4>
+            <a href="payment.php" class="btn-2">Buy Now</a>                    
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content"> 
+      <div class="container" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; justify-items: center;">
+        <div class="card">
+          <div class="imgBx">
+            <img src="./image/mesh.png" alt="mesh-fence">
+            <div class="popup">
+              <h3>More Info</h3>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia provident non veniam esse hic adipisci voluptatem soluta dolorum ea, beatae consectetur debitis repellendus vel repudiandae maxime alias sint aliquid illo!</p>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat earum doloribus magnam dolorum, a illum, unde aut debitis quae eligendi iusto iste recusandae vel explicabo dolore ut odit omnis culpa.</p>
+            </div>
+          </div>
+          <div class="contentBx">
+            <h2>MESH FENCE</h2>
+            <p>₹ 1350.00 <br>Iron mesh fencing 5ft/30ft 90/kg 15kgs 12guage.</p>
+            <input type="number" min="1" value="1" class="quantity" data-name="MESH FENCE" data-price="1350">
+            <button class="add-to-cart" data-name="MESH FENCE" data-price="1350">Add to Cart</button>
+          </div>
+        </div>
+        
+        <div class="card">
+          <div class="imgBx">
+            <img src="./image/hpipes.png" alt="WATER-PIPES">
+          </div>
+          <div class="contentBx">
+            <h2>WATER PIPES</h2>
+            <p>₹60.00 <br>water pipes with good quality.</p>
+            <input type="number" min="1" value="1" class="quantity" data-name="WATER PIPES" data-price="60">
+            <button class="add-to-cart" data-name="WATER PIPES" data-price="60">Add to Cart</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="imgBx">
+            <img src="./image/cement.png" alt="CEMENT">
+          </div>
+          <div class="contentBx">
+            <h2>CEMENT</h2>
+            <p>₹230.00 <br>quality cement 50kgs.2x25kgs</p>
+            <input type="number" min="1" value="1" class="quantity" data-name="CEMENT" data-price="230">
+            <button class="add-to-cart" data-name="CEMENT" data-price="230">Add to Cart</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="imgBx">
+            <img src="./image/sb.png" alt="SAND-BRICKS">
+          </div>
+          <div class="contentBx">
+            <h2>SAND BRICKS</h2>
+            <p>₹1500.00 <br>sand bricks with dimensions:9in x 4in x 3in.₹15/Piece quantity:100</p>
+            <input type="number" min="1" value="1" class="quantity" data-name="SAND BRICKS" data-price="1500">
+            <button class="add-to-cart" data-name="SAND BRICKS" data-price="1500">Add to Cart</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="imgBx">
+            <img src="./image/cementr.png" alt="CEMENT-ROOFS">
+          </div>
+          <div class="contentBx">
+            <h2>CEMENT ROOFS</h2>
+            <p>₹1000.00 <br>Cement Sheets, Thickness: 6mm, Width:3.5 ft.</p>
+            <input type="number" min="1" value="1" class="quantity" data-name="CEMENT ROOFS" data-price="1000">
+            <button class="add-to-cart" data-name="CEMENT ROOFS" data-price="1000">Add to Cart</button>
+          </div>
+        </div>
+        
+        <div class="card">
+          <div class="imgBx">
+            <img src="./image/chain.png" alt="CHAIN-FENCE">
+          </div>
+          <div class="contentBx">
+            <h2>CHAIN FENCE</h2>
+            <p>₹650.00 <br>Wire Diameter:2-2.5 mm, Size:12Gauge. ₹65/kg(10kgs)</p>
+            <input type="number" min="1" value="1" class="quantity" data-name="CHAIN FENCE" data-price="650">
+            <button class="add-to-cart" data-name="CHAIN FENCE" data-price="650">Add to Cart</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="imgBx">
+            <img src="./image/cb.png" alt="CEMENT-BRICKS">
+          </div>
+          <div class="contentBx">
+            <h2>CEMENT BRICKS</h2>
+            <p>₹260.00 <br>brick dimensions:24" x 8" x 4".quantity:10.</p>
+            <input type="number" min="1" value="1" class="quantity" data-name="CEMENT BRICKS" data-price="260">
+            <button class="add-to-cart" data-name="CEMENT BRICKS" data-price="260">Add to Cart</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="imgBx">
+            <img src="./image/cementpillar.png" alt="CEMENT-PILLARS">
+          </div>
+          <div class="contentBx">
+            <h2>CEMENT PILLARS</h2>
+            <p>₹300.00 <br>2 Ft 4 Inch Cement White Railing Pillar, For Stairs And Balcony.</p>
+            <input type="number" min="1" value="1" class="quantity" data-name="CEMENT PILLARS" data-price="300">
+            <button class="add-to-cart" data-name="CEMENT PILLARS" data-price="300">Add to Cart</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="imgBx">
+            <img src="./image/pvcpipes.png" alt="PVC-PIPES">
+          
+          </div>
+          <div class="contentBx">
+            <h2>PVC PIPES</h2>
+            <p>₹650.00 <br>1/2 inch Agricultural Pvc Pipe, length:3m, thickness:2mm.</p>
+            <input type="number" min="1" value="1" class="quantity" data-name="PVC PIPES" data-price="650">
+            <button class="add-to-cart" data-name="PVC PIPES" data-price="650">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+
+
+
+
+<div class="card">
+  <div class="imgBx">
+    <img src="./image/mesh.png" alt="mesh-fence">
+    <div class="popup">
+      <h3>More Info</h3>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia provident non veniam esse hic adipisci voluptatem soluta dolorum ea, beatae consectetur debitis repellendus vel repudiandae maxime alias sint aliquid illo!</p>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat earum doloribus magnam dolorum, a illum, unde aut debitis quae eligendi iusto iste recusandae vel explicabo dolore ut odit omnis culpa.</p>
+    </div>
+  </div>
+  <div class="contentBx">
+    <h2>MESH FENCE</h2>
+    <p>₹ 1350.00 <br>Iron mesh fencing 5ft/30ft 90/kg 15kgs 12guage.</p>
+    <input type="number" min="1" value="1" class="quantity" data-name="MESH FENCE" data-price="1350">
+    <button class="add-to-cart" data-name="MESH FENCE" data-price="1350">Add to Cart</button>
+  </div>
+</div>
