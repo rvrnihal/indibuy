@@ -1,0 +1,41 @@
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+logs/
+*.log
+
+# Temporary
+tmp/
+temp/
+*.tmp
+
+# Dependencies (if added)
+node_modules/
+vendor/
+
+# Backups
+*.bak
+*.backup
+*.sql
+
+# Security
+private_key
+certificate.key
+
+# Cache
+.cache/
+cache/

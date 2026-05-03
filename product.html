@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="style1.css">
+  <link rel="stylesheet" href="product.css">
+  <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css'>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css'>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <title>PRODUCTS</title>
+  <script src="https://kit.fontawesome.com/92d70a2fd8.js" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/js/all.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/js/all.min.js"></script>
+</head>
+<body>
+  <script src="addtocart.js"></script>
+  <nav class="navbar navbar-expand-lg" id="navbar">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="home.html" id="logo"><span id="span1">I</span>ndi<span>Buy</span></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link active" aria-current="page" href="home.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="product.html">Product</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+        </ul> 
+      </div>
+    </div>
+  </nav>
+  <!-- Cart section -->
+  
+  <div class="home">
+
+    <div class="container">
+      <div id="root">
+        <div class="sidebar">
+          <div class="head"><p>My Cart</p></div>
+          <div id="cartItem">Your cart is empty</div>
+          <div class="foot">
+            <h3>Total:</h3>
+            <h4 id="total">₹ 0</h4>
+            <a href="payment.php" class="btn-2">Buy Now</a>                    
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content"> 
+      <div class="container" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; justify-items: center;">
+        <div class="card">
+          <div class="imgBx">
+            <img src="./image/mesh.png" alt="mesh-fence">
+            <div class="popup">
+              <h3>More Info</h3>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia provident non veniam esse hic adipisci voluptatem soluta dolorum ea, beatae consectetur debitis repellendus vel repudiandae maxime alias sint aliquid illo!</p>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat earum doloribus magnam dolorum, a illum, unde aut debitis quae eligendi iusto iste recusandae vel explicabo dolore ut odit omnis culpa.</p>
+            </div>
+          </div>
+          <div class="contentBx">
+            <h2>MESH FENCE</h2>
+            <p>₹ 1350.00 <br>Iron mesh fencing 5ft/30ft 90/kg 15kgs 12guage.</p>
+            <input type="number" min="1" value="1" class="quantity" data-name="MESH FENCE" data-price="1350">
+            <button class="add-to-cart" data-name="MESH FENCE" data-price="1350">Add to Cart</button>
+          </div>
+        </div>
+        
+         <div class="card">
+          <div class="imgBx">
+            <img src="./image/hpipes.png" alt="WATER-PIPES">
+            <div class="popup">
+              <h3>More Info</h3>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia provident non veniam esse hic adipisci voluptatem soluta dolorum ea, beatae consectetur debitis repellendus vel repudiandae maxime alias sint aliquid illo!</p>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat earum doloribus magnam dolorum, a illum, unde aut debitis quae eligendi iusto iste recusandae vel explicabo dolore ut odit omnis culpa.</p>
+            </div>
+          </div>
+          <div class="contentBx">
+            
+      
+            <h2>WATER PIPES</h2>
+            
+            <p>₹60.00 <br>water pipes with good quality.</p>
+            <input type="number" min="1" value="1" class="quantity" data-name="WATER-PIPES" data-price="60">
+            <button class="add-to-cart" data-name="WATER-PIPES" data-price="60">Add to Cart</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="imgBx">
+            <img src="./image/cement.png" alt="CEMENT">
+            <div class="popup">
+              <h3>More Info</h3>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia provident non veniam esse hic adipisci voluptatem soluta dolorum ea, beatae consectetur debitis repellendus vel repudiandae maxime alias sint aliquid illo!</p>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat earum doloribus magnam dolorum, a illum, unde aut debitis quae eligendi iusto iste recusandae vel explicabo dolore ut odit omnis culpa.</p>
+            </div>
+          </div>
+          <div class="contentBx">
+            
+            <h2>CEMENT</h2>
+            
+            <p>₹230.00 <br>quality cement 50kgs.2x25kgs</p>
+            <input type="number" min="1" value="1" class="quantity" data-name="CEMENT" data-price="230">
+            <button class="add-to-cart" data-name="CEMENT" data-price="230">Add to Cart</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="imgBx">
+            <img src="./image/sb.png" alt="SAND-BRICKS">
+            <div class="popup">
+              <h3>More Info</h3>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia provident non veniam esse hic adipisci voluptatem soluta dolorum ea, beatae consectetur debitis repellendus vel repudiandae maxime alias sint aliquid illo!</p>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat earum doloribus magnam dolorum, a illum, unde aut debitis quae eligendi iusto iste recusandae vel explicabo dolore ut odit omnis culpa.</p>
+            </div>
+          </div>
+          <div class="contentBx">
+            <h2>SAND BRICKS</h2>
+            <p>₹1500.00 <br>sand bricks with dimensions:9in x 4in x 3in.₹15/Piece quantity:100</p>
+            <input type="number" min="1" value="1" class="quantity" data-name="SAND-BRICKS" data-price="1500">
+            <button class="add-to-cart" data-name="SAND-BRICKS" data-price="1500">Add to Cart</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="imgBx">
+            <img src="./image/cementr.png" alt="CEMENT-ROOFS">
+            <div class="popup">
+              <h3>More Info</h3>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia provident non veniam esse hic adipisci voluptatem soluta dolorum ea, beatae consectetur debitis repellendus vel repudiandae maxime alias sint aliquid illo!</p>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat earum doloribus magnam dolorum, a illum, unde aut debitis quae eligendi iusto iste recusandae vel explicabo dolore ut odit omnis culpa.</p>
+            </div>
+          </div>
+          <div class="contentBx">
+            <h2>CEMENT ROOFS</h2>
+            <p>₹1000.00 <br>Cement Sheets, Thickness: 6mm, Width:3.5 ft.</p>
+            <button class="add-to-cart" data-name="CEMENT-ROOFS" data-price="1000">Add to Cart</button>
+          </div>
+        </div>
+        
+         <div class="card">
+          <div class="imgBx">
+            <img src="./image/chain.png" alt="CHAIN-FENCE">
+            <div class="popup">
+              <h3>More Info</h3>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia provident non veniam esse hic adipisci voluptatem soluta dolorum ea, beatae consectetur debitis repellendus vel repudiandae maxime alias sint aliquid illo!</p>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat earum doloribus magnam dolorum, a illum, unde aut debitis quae eligendi iusto iste recusandae vel explicabo dolore ut odit omnis culpa.</p>
+            </div>
+          </div>
+          <div class="contentBx">
+            <h2>CHAIN FENCE</h2>
+            <p>₹650.00 <br>Wire Diameter:2-2.5 mm, Size:12Gauge. ₹65/kg(10kgs)</p>
+            <button class="add-to-cart" data-name="CHAIN-FENCE" data-price="650">Add to Cart</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="imgBx">
+            <img src="./image/cb.png" alt="CEMENT-BRICKS">
+            <div class="popup">
+              <h3>More Info</h3>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia provident non veniam esse hic adipisci voluptatem soluta dolorum ea, beatae consectetur debitis repellendus vel repudiandae maxime alias sint aliquid illo!</p>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat earum doloribus magnam dolorum, a illum, unde aut debitis quae eligendi iusto iste recusandae vel explicabo dolore ut odit omnis culpa.</p>
+            </div>
+          </div>
+          <div class="contentBx">
+            <h2>CEMENT BRICKS</h2>
+            <p>₹260.00 <br>brick dimensions:24" x 8" x 4".quantity:10.</p>
+            <button class="add-to-cart" data-name="CEMENT-BRICKS" data-price="260">Add to Cart</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="imgBx">
+            <img src="./image/cementpillar.png" alt="CEMENT-PILLARS">
+            <div class="popup">
+              <h3>More Info</h3>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia provident non veniam esse hic adipisci voluptatem soluta dolorum ea, beatae consectetur debitis repellendus vel repudiandae maxime alias sint aliquid illo!</p>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat earum doloribus magnam dolorum, a illum, unde aut debitis quae eligendi iusto iste recusandae vel explicabo dolore ut odit omnis culpa.</p>
+            </div>
+          </div>
+          <div class="contentBx">
+            <h2>CEMENT PILLARS</h2>
+            <p>₹300.00 <br>2 Ft 4 Inch Cement White Railing Pillar, For Stairs And Balcony.</p>
+            <button class="add-to-cart" data-name="CEMENT-PILLARS" data-price="300">Add to Cart</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="imgBx">
+            <img src="./image/pvcpipes.png" alt="PVC-PIPES">
+            <div class="popup">
+              <h3>More Info</h3>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia provident non veniam esse hic adipisci voluptatem soluta dolorum ea, beatae consectetur debitis repellendus vel repudiandae maxime alias sint aliquid illo!</p>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat earum doloribus magnam dolorum, a illum, unde aut debitis quae eligendi iusto iste recusandae vel explicabo dolore ut odit omnis culpa.</p>
+            </div>
+          </div>
+          <div class="contentBx">
+            <h2>PVC PIPES</h2>
+            <p>₹650.00 <br>1/2 inch Agricultural Pvc Pipe, length:3m, thickness:2mm.</p>
+            <button class="add-to-cart" data-name="PVC-PIPES" data-price="650">Add to Cart</button>
+          </div>
+        </div>
+        
+         <div class="card">
+          <div class="imgBx">
+            <img src="./image/ironrod.png" alt="IRON-RODS">
+            <div class="popup">
+              <h3>More Info</h3>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia provident non veniam esse hic adipisci voluptatem soluta dolorum ea, beatae consectetur debitis repellendus vel repudiandae maxime alias sint aliquid illo!</p>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat earum doloribus magnam dolorum, a illum, unde aut debitis quae eligendi iusto iste recusandae vel explicabo dolore ut odit omnis culpa.</p>
+            </div>
+          </div>
+          <div class="contentBx">
+            <h2>IRON RODS</h2>
+            <p>₹260.00 <br>Round Iron Rod, 6 meter, Size/Diameter: 1 inch.₹52/kg(10pieces)</p>
+            <button class="add-to-cart" data-name="IRON-RODS" data-price="260">Add to Cart</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="imgBx">
+            <img src="./image/sand.png" alt="CONSTRUCTION-SAND">
+            <div class="popup">
+              <h3>More Info</h3>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia provident non veniam esse hic adipisci voluptatem soluta dolorum ea, beatae consectetur debitis repellendus vel repudiandae maxime alias sint aliquid illo!</p>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat earum doloribus magnam dolorum, a illum, unde aut debitis quae eligendi iusto iste recusandae vel explicabo dolore ut odit omnis culpa.</p>
+            </div>
+          </div>
+          <div class="contentBx">
+            <h2>CONSTRUCTION SAND</h2>
+            <p>₹1400.00 <br>fine sand for house construction 1 Tonne</p>
+            <button class="add-to-cart" data-name="CONSTRUCTION-SAND" data-price="1400">Add to Cart</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="imgBx">
+            <img src="./image/conccrete.webp" alt="CONCRETE-ROCKS">
+            <div class="popup">
+              <h3>More Info</h3>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia provident non veniam esse hic adipisci voluptatem soluta dolorum ea, beatae consectetur debitis repellendus vel repudiandae maxime alias sint aliquid illo!</p>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat earum doloribus magnam dolorum, a illum, unde aut debitis quae eligendi iusto iste recusandae vel explicabo dolore ut odit omnis culpa.</p>
+            </div>
+          </div>
+          <div class="contentBx">
+            <h2>CONCRETE ROCKS</h2>
+            <p>₹1200.00 <br>concrete rocks for house construction.</p>
+            <button class="add-to-cart" data-name="CONCRETE-ROCKS" data-price="1200">Add to Cart</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="imgBx">
+            <img src="./image/stonedust.png" alt="STONE-DUST">
+            <div class="popup">
+              <h3>More Info</h3>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia provident non veniam esse hic adipisci voluptatem soluta dolorum ea, beatae consectetur debitis repellendus vel repudiandae maxime alias sint aliquid illo!</p>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat earum doloribus magnam dolorum, a illum, unde aut debitis quae eligendi iusto iste recusandae vel explicabo dolore ut odit omnis culpa.</p>
+            </div>
+          </div>
+          <div class="contentBx">
+            <h2>STONE DUST</h2>
+            <p>₹950.00 <br>Dust used for house construction 1 Tonne(1000kgs).</p>
+            <button class="add-to-cart" data-name="STONE-DUST" data-price="950">Add to Cart</button>
+          </div>
+        </div>
+        
+         <div class="card">
+          <div class="imgBx">
+            <img src="./image/lightweightbricks.png" alt="LIGHT-WEIGHT-BRICKS">
+            <div class="popup">
+              <h3>More Info</h3>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia provident non veniam esse hic adipisci voluptatem soluta dolorum ea, beatae consectetur debitis repellendus vel repudiandae maxime alias sint aliquid illo!</p>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat earum doloribus magnam dolorum, a illum, unde aut debitis quae eligendi iusto iste recusandae vel explicabo dolore ut odit omnis culpa.</p>
+            </div>
+          </div>
+          <div class="contentBx">
+            <h2>LIGHT WEIGHT BRICKS</h2>
+            <p>₹4000.00 <br>Size: 9In. X 4In. X 3In., Shape:Rectangular, qunatity: 100</p>
+            <button class="add-to-cart" data-name="LIGHT-WEIGHT-BRICKS" data-price="4000">Add to Cart</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="imgBx">
+            <img src="./image/moram.webp" alt="HARD-SAND">
+            <div class="popup">
+              <h3>More Info</h3>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia provident non veniam esse hic adipisci voluptatem soluta dolorum ea, beatae consectetur debitis repellendus vel repudiandae maxime alias sint aliquid illo!</p>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat earum doloribus magnam dolorum, a illum, unde aut debitis quae eligendi iusto iste recusandae vel explicabo dolore ut odit omnis culpa.</p>
+            </div>
+          </div>
+          <div class="contentBx">
+            <h2>HARD SAND</h2>
+            <p>₹500.00 <br>construction hard sand for leveling the land.1 Tonne(1000kgs)</p>
+            <button class="add-to-cart" data-name="HARD-SAND" data-price="500">Add to Cart</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="imgBx">
+            <img src="./image/watertank.webp" alt="WATER-TANK">
+            <div class="popup">
+              <h3>More Info</h3>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia provident non veniam esse hic adipisci voluptatem soluta dolorum ea, beatae consectetur debitis repellendus vel repudiandae maxime alias sint aliquid illo!</p>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat earum doloribus magnam dolorum, a illum, unde aut debitis quae eligendi iusto iste recusandae vel explicabo dolore ut odit omnis culpa.</p>
+            </div>
+          </div>
+          <div class="contentBx">
+            <h2>WATER TANK</h2>
+            <p>₹5000.00 <br>Black Uniplast PVC Water Storage Tank. Capacity: 1000L</p>
+            <button class="add-to-cart" data-name="WATER-TANK" data-price="5000">Add to Cart</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="imgBx">
+            <img src="./image/frontdoor.webp" alt="FRONT-DOOR">
+            <div class="popup">
+              <h3>More Info</h3>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia provident non veniam esse hic adipisci voluptatem soluta dolorum ea, beatae consectetur debitis repellendus vel repudiandae maxime alias sint aliquid illo!</p>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat earum doloribus magnam dolorum, a illum, unde aut debitis quae eligendi iusto iste recusandae vel explicabo dolore ut odit omnis culpa.</p>
+            </div>
+          </div>
+          <div class="contentBx">
+            <h2>FRONT DOOR</h2>
+            <p>₹18000.00 <br>Exterior Sagwan Wood Doors, For Home.pair of Doors(2)</p>
+            <button class="add-to-cart" data-name="FRONT-DOOR" data-price="18000">Add to Cart</button>
+          </div>
+        </div>
+        
+         <div class="card">
+          <div class="imgBx">
+            <img src="./image/window.webp" alt="HOUSE-WINDOW">
+            <div class="popup">
+              <h3>More Info</h3>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia provident non veniam esse hic adipisci voluptatem soluta dolorum ea, beatae consectetur debitis repellendus vel repudiandae maxime alias sint aliquid illo!</p>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat earum doloribus magnam dolorum, a illum, unde aut debitis quae eligendi iusto iste recusandae vel explicabo dolore ut odit omnis culpa.</p>
+            </div>
+          </div>
+          <div class="contentBx">
+            <h2>HOUSE WINDOW</h2>
+            <p>₹10000.00 <br>Brown Wooden Glass Window, 3x5feet, Rectangular.Pack of 4.</p>
+            <button class="add-to-cart" data-name="HOUSE-WINDOW" data-price="10000">Add to Cart</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="imgBx">
+            <img src="./image/smetalstares.webp" alt="STRAIGHT-STAIRS">
+            <div class="popup">
+              <h3>More Info</h3>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia provident non veniam esse hic adipisci voluptatem soluta dolorum ea, beatae consectetur debitis repellendus vel repudiandae maxime alias sint aliquid illo!</p>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat earum doloribus magnam dolorum, a illum, unde aut debitis quae eligendi iusto iste recusandae vel explicabo dolore ut odit omnis culpa.</p>
+            </div>
+          </div>
+          <div class="contentBx">
+            <h2>STRAIGHT STAIRS</h2>
+            <p>₹22000.00 <br>Metal Staircase, Thickness: 2MM</p>
+            <button class="add-to-cart" data-name="STRAIGHT-STAIRS" data-price="22000">Add to Cart</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="imgBx">
+            <img src="./image/spiralstares.webp" alt="SPIRAL-STAIRS">
+            <div class="popup">
+              <h3>More Info</h3>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia provident non veniam esse hic adipisci voluptatem soluta dolorum ea, beatae consectetur debitis repellendus vel repudiandae maxime alias sint aliquid illo!</p>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat earum doloribus magnam dolorum, a illum, unde aut debitis quae eligendi iusto iste recusandae vel explicabo dolore ut odit omnis culpa.</p>
+            </div>
+          </div>
+          <div class="contentBx">
+            <h2>SPIRAL STAIRS</h2>
+            <p>₹15000.00 <br>Spiral stairs made with iron.</p>
+            <button class="add-to-cart" data-name="SPIRAL-STAIRS" data-price="15000">Add to Cart</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="imgBx">
+            <img src="./image/plaintales.webp" alt="PLAIN-TILES">
+            <div class="popup">
+              <h3>More Info</h3>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia provident non veniam esse hic adipisci voluptatem soluta dolorum ea, beatae consectetur debitis repellendus vel repudiandae maxime alias sint aliquid illo!</p>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat earum doloribus magnam dolorum, a illum, unde aut debitis quae eligendi iusto iste recusandae vel explicabo dolore ut odit omnis culpa.</p>
+            </div>
+          </div>
+          <div class="contentBx">
+            <h2>PLAIN TILES</h2>
+            <p>₹300.00 <br>plain tails for parking area.pack of 10.</p>
+            <button class="add-to-cart" data-name="PLAIN-TILES" data-price="300">Add to Cart</button>
+          </div>
+        </div>
+        
+         <div class="card">
+          <div class="imgBx">
+            <img src="./image/designtiles.webp" alt="DESIGN-TILES">
+            <div class="popup">
+              <h3>More Info</h3>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia provident non veniam esse hic adipisci voluptatem soluta dolorum ea, beatae consectetur debitis repellendus vel repudiandae maxime alias sint aliquid illo!</p>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat earum doloribus magnam dolorum, a illum, unde aut debitis quae eligendi iusto iste recusandae vel explicabo dolore ut odit omnis culpa.</p>
+            </div>
+          </div>
+          <div class="contentBx">
+            <h2>DESIGN TILES</h2>
+            <p>₹180.00 <br>Multicolor Pebble Honey Parking Tiles, Size: 300X300.pack of 4.</p>
+            <button class="add-to-cart" data-name="DESIGN-TILES" data-price="180">Add to Cart</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="imgBx">
+            <img src="./image/kitchentiles.png" alt="KITCHEN-TILES">
+            <div class="popup">
+              <h3>More Info</h3>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia provident non veniam esse hic adipisci voluptatem soluta dolorum ea, beatae consectetur debitis repellendus vel repudiandae maxime alias sint aliquid illo!</p>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat earum doloribus magnam dolorum, a illum, unde aut debitis quae eligendi iusto iste recusandae vel explicabo dolore ut odit omnis culpa.</p>
+            </div>
+          </div>
+          <div class="contentBx">
+            <h2>KITCHEN TILES</h2>
+            <p>₹120.00 <br>Glossy Ceramic Kitchen Wall Tiles, Size: 1x1.5 Feet(300x450 mm).</p>
+            <button class="add-to-cart" data-name="KITCHEN-TILES" data-price="120">Add to Cart</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="imgBx">
+            <img src="./image/limestone.webp" alt="LIMESTONE-TILES">
+            <div class="popup">
+              <h3>More Info</h3>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia provident non veniam esse hic adipisci voluptatem soluta dolorum ea, beatae consectetur debitis repellendus vel repudiandae maxime alias sint aliquid illo!</p>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat earum doloribus magnam dolorum, a illum, unde aut debitis quae eligendi iusto iste recusandae vel explicabo dolore ut odit omnis culpa.</p>
+            </div>
+          </div>
+          <div class="contentBx">
+            <h2>LIMESTONE TILES</h2>
+            <p>₹45.00 <BR>Grey Leather Finish Tumbled limeStone Tile, Size: 900x600 mm.</p>
+            <button class="add-to-cart" data-name="LIMESTONE-TILES" data-price="45">Add to Cart</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="imgBx">
+            <img src="./image/cupboards.webp" alt="DRESSING-WARDROBE">
+            <div class="popup">
+              <h3>More Info</h3>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia provident non veniam esse hic adipisci voluptatem soluta dolorum ea, beatae consectetur debitis repellendus vel repudiandae maxime alias sint aliquid illo!</p>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat earum doloribus magnam dolorum, a illum, unde aut debitis quae eligendi iusto iste recusandae vel explicabo dolore ut odit omnis culpa.</p>
+            </div>
+          </div>
+          <div class="contentBx">
+            <h2>DRESSING WARDROBE</h2>
+            <p>₹12000.00 <br>Brown Plywood Dressing Wardrobe.</p>
+            <button class="add-to-cart" data-name="DRESSING-WARDROBE" data-price="12000">Add to Cart</button>
+          </div>
+        </div>
+        
+         <div class="card">
+          <div class="imgBx">
+            <img src="./image/elepipe.png" alt="ELECTRIC-PIPES">
+            <div class="popup">
+              <h3>More Info</h3>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia provident non veniam esse hic adipisci voluptatem soluta dolorum ea, beatae consectetur debitis repellendus vel repudiandae maxime alias sint aliquid illo!</p>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat earum doloribus magnam dolorum, a illum, unde aut debitis quae eligendi iusto iste recusandae vel explicabo dolore ut odit omnis culpa.</p>
+            </div>
+          </div>
+          <div class="contentBx">
+            <h2>ELECTRIC PIPES</h2>
+            <p>₹120.00 <br>Aeroplast White Electric Wire PVC Pipe.Length:10m, qunatity:10</p>
+            <button class="add-to-cart" data-name="ELECTRIC-PIPES" data-price="120">Add to Cart</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="imgBx">
+            <img src="./image/elewires.webp" alt="ELECTRIC-WIRES">
+            <div class="popup">
+              <h3>More Info</h3>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia provident non veniam esse hic adipisci voluptatem soluta dolorum ea, beatae consectetur debitis repellendus vel repudiandae maxime alias sint aliquid illo!</p>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat earum doloribus magnam dolorum, a illum, unde aut debitis quae eligendi iusto iste recusandae vel explicabo dolore ut odit omnis culpa.</p>
+            </div>
+          </div>
+          <div class="contentBx">
+            <h2>ELECTRIC WIRES</h2>
+            <p>₹650.00 <br>Cable length:90m</p>
+            <button class="add-to-cart" data-name="ELECTRIC-WIRES" data-price="650">Add to Cart</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="imgBx">
+            <img src="./image/ventilation.webp" alt="VENTILATION-WINDOW">
+            <div class="popup">
+              <h3>More Info</h3>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia provident non veniam esse hic adipisci voluptatem soluta dolorum ea, beatae consectetur debitis repellendus vel repudiandae maxime alias sint aliquid illo!</p>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat earum doloribus magnam dolorum, a illum, unde aut debitis quae eligendi iusto iste recusandae vel explicabo dolore ut odit omnis culpa.</p>
+            </div>
+          </div>
+          <div class="contentBx">
+            <h2>VENTILATION WINDOW</h2>
+            <p>₹200 <br>Indian terra cotta window screen wall for ventilation and lighting.</p>
+            <button class="add-to-cart" data-name="VENTILATION-WINDOW" data-price="200">Add to Cart</button>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+  <script src="addtocart.js"></script>
+</body>
+</html>
