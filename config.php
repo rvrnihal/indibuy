@@ -1,8 +1,14 @@
 <?php
 /**
- * Application Configuration
+ * Application Configuration - Deployment Ready
  * Loads environment variables and initializes database connection
+ * Auto-creates necessary directories on first run
  */
+
+// Create logs directory if it doesn't exist
+if (!is_dir(__DIR__ . '/logs')) {
+    mkdir(__DIR__ . '/logs', 0755, true);
+}
 
 // Load .env file if it exists
 if (file_exists(__DIR__ . '/.env')) {
@@ -16,11 +22,12 @@ if (file_exists(__DIR__ . '/.env')) {
 }
 
 // Database Configuration
-define('DB_HOST', $_ENV['DB_HOST'] ?? 'localhost');
-define('DB_USER', $_ENV['DB_USER'] ?? 'root');
-define('DB_PASS', $_ENV['DB_PASS'] ?? '');
-define('DB_NAME', $_ENV['DB_NAME'] ?? 'paymentdb');
-define('APP_ENV', $_ENV['APP_ENV'] ?? 'development');
+define('DB_HOST', $_ENV['DB_HOST'] ?? getenv('DB_HOST') ?? 'localhost');
+define('DB_USER', $_ENV['DB_USER'] ?? getenv('DB_USER') ?? 'root');
+define('DB_PASS', $_ENV['DB_PASS'] ?? getenv('DB_PASS') ?? '');
+define('DB_NAME', $_ENV['DB_NAME'] ?? getenv('DB_NAME') ?? 'paymentdb');
+define('APP_ENV', $_ENV['APP_ENV'] ?? getenv('APP_ENV') ?? 'development');
+define('APP_ROOT', __DIR__);
 
 // Error handling
 if (APP_ENV === 'production') {
@@ -31,6 +38,7 @@ if (APP_ENV === 'production') {
 } else {
     error_reporting(E_ALL);
     ini_set('display_errors', 1);
+    ini_set('error_log', __DIR__ . '/logs/errors.log');
 }
 
 // CSRF Token Configuration
@@ -50,20 +58,50 @@ if (session_status() === PHP_SESSION_NONE) {
 /**
  * Get database connection
  * Uses prepared statements for security
+ * Better error handling for deployment
  */
 function getDBConnection() {
+    static $conn = null;
+    
+    // Return cached connection
+    if ($conn !== null) {
+        return $conn;
+    }
+    
     $conn = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
     
     if ($conn->connect_error) {
         error_log("Database connection failed: " . $conn->connect_error);
+        
         if (APP_ENV === 'production') {
-            die(json_encode(['error' => 'Database connection failed']));
+            http_response_code(503);
+            die(json_encode([
+                'success' => false,
+                'statusCode' => 503,
+                'message' => 'Service temporarily unavailable'
+            ]));
         } else {
-            die("Connection failed: " . $conn->connect_error);
+            http_response_code(500);
+            die(json_encode([
+                'success' => false,
+                'statusCode' => 500,
+                'message' => 'Database connection failed: ' . $conn->connect_error,
+                'debug' => [
+                    'host' => DB_HOST,
+                    'user' => DB_USER,
+                    'database' => DB_NAME
+                ]
+            ]));
         }
     }
     
     $conn->set_charset("utf8mb4");
+    
+    // Enable error mode for better debugging
+    if (APP_ENV !== 'production') {
+        $conn->report_mode = MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT;
+    }
+    
     return $conn;
 }
 
