@@ -1,7 +1,7 @@
 import Review from '../models/Review.js';
 import Product from '../models/Product.js';
 import Order from '../models/Order.js';
-import AppError from '../middleware/errorHandler.js';
+import { AppError } from '../middleware/errorHandler.js';
 
 // Create Review
 export const createReview = async (req, res, next) => {

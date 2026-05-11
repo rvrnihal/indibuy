@@ -2,7 +2,7 @@ import Vendor from '../models/Vendor.js';
 import Product from '../models/Product.js';
 import Order from '../models/Order.js';
 import Analytics from '../models/Analytics.js';
-import AppError from '../middleware/errorHandler.js';
+import { AppError } from '../middleware/errorHandler.js';
 
 // Get Vendor Dashboard
 export const getVendorDashboard = async (req, res, next) => {

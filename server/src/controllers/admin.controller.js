@@ -3,7 +3,7 @@ import Vendor from '../models/Vendor.js';
 import Product from '../models/Product.js';
 import Order from '../models/Order.js';
 import SupportTicket from '../models/SupportTicket.js';
-import AppError from '../middleware/errorHandler.js';
+import { AppError } from '../middleware/errorHandler.js';
 
 // Get Dashboard Stats
 export const getDashboardStats = async (req, res, next) => {

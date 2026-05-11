@@ -1,7 +1,7 @@
 import Cart from '../models/Cart.js';
 import Product from '../models/Product.js';
 import Coupon from '../models/Coupon.js';
-import AppError from '../middleware/errorHandler.js';
+import { AppError } from '../middleware/errorHandler.js';
 
 // Get Cart
 export const getCart = async (req, res, next) => {

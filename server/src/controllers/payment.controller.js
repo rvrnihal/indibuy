@@ -1,13 +1,20 @@
 import Transaction from '../models/Transaction.js';
 import Order from '../models/Order.js';
-import AppError from '../middleware/errorHandler.js';
+import { AppError } from '../middleware/errorHandler.js';
 import Razorpay from 'razorpay';
 import crypto from 'crypto';
 
-const razorpay = new Razorpay({
-  key_id: process.env.RAZORPAY_KEY_ID,
-  key_secret: process.env.RAZORPAY_KEY_SECRET
-});
+let razorpay = null;
+
+const initRazorpay = () => {
+  if (!razorpay && process.env.RAZORPAY_KEY_ID && process.env.RAZORPAY_KEY_SECRET) {
+    razorpay = new Razorpay({
+      key_id: process.env.RAZORPAY_KEY_ID,
+      key_secret: process.env.RAZORPAY_KEY_SECRET
+    });
+  }
+  return razorpay;
+};
 
 // Create Payment Order (Razorpay)
 export const createPaymentOrder = async (req, res, next) => {
@@ -16,6 +23,11 @@ export const createPaymentOrder = async (req, res, next) => {
 
     if (!orderId || !amount) {
       throw new AppError('Order ID and amount are required', 400);
+    }
+
+    const razorpayInstance = initRazorpay();
+    if (!razorpayInstance) {
+      throw new AppError('Razorpay not configured. Please add RAZORPAY_KEY_ID and RAZORPAY_KEY_SECRET to .env', 500);
     }
 
     const order = await Order.findById(orderId);
@@ -28,7 +40,7 @@ export const createPaymentOrder = async (req, res, next) => {
     }
 
     // Create Razorpay order
-    const razorpayOrder = await razorpay.orders.create({
+    const razorpayOrder = await razorpayInstance.orders.create({
       amount: amount * 100, // Convert to paise
       currency,
       receipt: orderId,
@@ -58,6 +70,11 @@ export const verifyPayment = async (req, res, next) => {
       throw new AppError('Missing required payment details', 400);
     }
 
+    const razorpayInstance = initRazorpay();
+    if (!razorpayInstance) {
+      throw new AppError('Razorpay not configured', 500);
+    }
+
     // Verify signature
     const body = orderId + '|' + paymentId;
     const expectedSignature = crypto
@@ -70,7 +87,7 @@ export const verifyPayment = async (req, res, next) => {
     }
 
     // Fetch payment details from Razorpay
-    const payment = await razorpay.payments.fetch(paymentId);
+    const payment = await razorpayInstance.payments.fetch(paymentId);
 
     if (payment.status !== 'captured') {
       throw new AppError('Payment not captured', 400);
@@ -169,6 +186,11 @@ export const processRefund = async (req, res, next) => {
   try {
     const { orderId, amount, reason } = req.body;
 
+    const razorpayInstance = initRazorpay();
+    if (!razorpayInstance) {
+      throw new AppError('Razorpay not configured', 500);
+    }
+
     const order = await Order.findById(orderId);
     if (!order) {
       throw new AppError('Order not found', 404);
@@ -185,7 +207,7 @@ export const processRefund = async (req, res, next) => {
     // Create refund in Razorpay
     if (order.payment.transactionId) {
       try {
-        const refund = await razorpay.payments.refund(order.payment.transactionId, {
+        const refund = await razorpayInstance.payments.refund(order.payment.transactionId, {
           amount: amount * 100,
           notes: { reason }
         });

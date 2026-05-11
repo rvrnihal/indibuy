@@ -1,5 +1,5 @@
 import Notification from '../models/Notification.js';
-import AppError from '../middleware/errorHandler.js';
+import { AppError } from '../middleware/errorHandler.js';
 import nodemailer from 'nodemailer';
 
 // Email transporter configuration

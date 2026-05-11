@@ -1,7 +1,7 @@
 import User from '../models/User.js';
 import Address from '../models/Address.js';
 import Wishlist from '../models/Wishlist.js';
-import AppError from '../middleware/errorHandler.js';
+import { AppError } from '../middleware/errorHandler.js';
 import bcrypt from 'bcryptjs';
 
 // Get User Profile
