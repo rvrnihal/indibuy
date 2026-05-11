@@ -6,6 +6,9 @@ RUN a2enmod rewrite headers deflate expires
 # Install extensions
 RUN docker-php-ext-install mysqli pdo pdo_mysql
 
+# Install APCu for caching and rate limiting
+RUN pecl install apcu && docker-php-ext-enable apcu
+
 # Set working directory
 WORKDIR /var/www/html
 
