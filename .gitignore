@@ -39,3 +39,18 @@ certificate.key
 # Cache
 .cache/
 cache/
+
+# Build artifacts
+.next/
+dist/
+build/
+out/
+
+# Lock files
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Development
+.turbo/
+.env.development.local
