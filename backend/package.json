@@ -1,0 +1,75 @@
+{
+  "name": "indibuy-backend",
+  "version": "1.0.0",
+  "description": "IndiBuy - Industrial B2B E-Commerce Platform Backend",
+  "main": "src/server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js",
+    "test": "vitest",
+    "test:watch": "vitest --watch",
+    "lint": "eslint src/**/*.js"
+  },
+  "keywords": [
+    "b2b",
+    "ecommerce",
+    "marketplace",
+    "industrial"
+  ],
+  "jest": {
+    "testEnvironment": "node",
+    "transform": {},
+    "moduleNameMapper": {
+      "^(\\.{1,2}/.*)\\.js$": "$1"
+    }
+  },
+  "author": "IndiBuy Team",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.5.0",
+    "bcryptjs": "^2.4.3",
+    "cloudinary": "^1.40.0",
+    "connect-mongo": "^5.1.0",
+    "cors": "^2.8.5",
+    "date-fns": "^2.30.0",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "express-rate-limit": "^7.0.0",
+    "express-session": "^1.17.3",
+    "express-validator": "^7.0.0",
+    "helmet": "^7.0.0",
+    "ioredis": "^5.3.2",
+    "joi": "^17.11.0",
+    "jsonwebtoken": "^9.0.2",
+    "moment": "^2.29.4",
+    "mongoose": "^7.5.0",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.5-lts.1",
+    "nodemailer": "^6.9.6",
+    "passport": "^0.7.0",
+    "passport-google-oauth20": "^2.0.0",
+    "passport-jwt": "^4.0.1",
+    "razorpay": "^2.9.1",
+    "redis": "^4.6.11",
+    "slugify": "^1.6.6",
+    "socket.io": "^4.7.2",
+    "stripe": "^13.10.0",
+    "winston": "^3.11.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.29.0",
+    "@babel/preset-env": "^7.29.5",
+    "babel-jest": "^30.4.1",
+    "eslint": "^8.50.0",
+    "jest": "^29.0.0",
+    "nodemon": "^3.0.0",
+    "prettier": "^3.0.0",
+    "supertest": "^6.3.4",
+    "vitest": "^4.1.6"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  }
+}

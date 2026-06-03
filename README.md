@@ -1,225 +1,397 @@
-# 🏗️ IndiBuy — Industrial & Construction E-Commerce Platform
+# IndiBuy - Modern B2B E-Commerce Platform
 
-<div align="center">
+![IndiBuy Platform](https://img.shields.io/badge/Status-Production%20Ready-brightgreen)
+![License](https://img.shields.io/badge/License-Proprietary-blue)
+![Node](https://img.shields.io/badge/Node-18+-green)
+![React](https://img.shields.io/badge/React-18.2+-blue)
+![MongoDB](https://img.shields.io/badge/MongoDB-5.0+-green)
 
-![IndiBuy Banner](https://via.placeholder.com/800x200/1a1a2e/f39c12?text=IndiBuy+-+Industrial+E-Commerce+Revolution)
+A comprehensive, production-ready full-stack B2B e-commerce platform designed for industrial and construction products. Built with cutting-edge technologies and inspired by leading platforms like Amazon, Flipkart, Alibaba, and IndiaMART.
 
-**🚀 Transforming Industrial Procurement with Modern Technology**
+## 🎯 Overview
 
-[![Live Demo](https://img.shields.io/badge/🌐_Live_Demo-Visit_Site-success?style=for-the-badge)](https://indibuy.netlify.app/)
-[![GitHub](https://img.shields.io/badge/📁_Source_Code-GitHub-black?style=for-the-badge&logo=github)](https://github.com/yourusername/IndiBuy)
-[![Documentation](https://img.shields.io/badge/📖_Docs-Read_More-blue?style=for-the-badge)](your-docs-link)
+IndiBuy connects manufacturers, suppliers, contractors, retailers, and industrial buyers on a unified platform. It features advanced capabilities for managing complex B2B transactions including bulk ordering, quotations, vendor management, and multi-role operations.
 
-</div>
+### Key Features
 
----
+✅ **Multi-Role System**: Buyer, Vendor, Admin, Delivery Partner  
+✅ **Advanced Search**: Full-text search with filters and aggregations  
+✅ **Bulk Ordering**: MOQ support and volume-based pricing  
+✅ **Quotation System**: Request and compare quotations  
+✅ **Payment Integration**: Razorpay and Stripe support  
+✅ **Analytics Dashboard**: Real-time business insights  
+✅ **Vendor Management**: Commission tracking and verification  
+✅ **Delivery Management**: Partner assignment and tracking  
+✅ **Responsive Design**: Mobile-first UI for all devices  
+✅ **Dark/Light Mode**: Theme customization  
+✅ **SEO Optimized**: Built-in SEO capabilities  
+✅ **Real-time Features**: Socket.io for notifications  
+✅ **Scalable Architecture**: Cloud-native design  
 
-## 🎯 Project Overview
+## 🛠 Tech Stack
 
-**IndiBuy** revolutionizes the way industries and contractors source construction materials and industrial equipment. Built with scalability and user experience at its core, this platform bridges the gap between suppliers and buyers in the B2B industrial space.
+### Frontend
+- **Framework**: Next.js 14.0+
+- **UI Library**: React 18.2+
+- **Styling**: Tailwind CSS 3.3
+- **Components**: ShadCN UI 0.8
+- **Animations**: Framer Motion 10.16
+- **State Management**: Zustand 4.4, React Query 5.0
+- **Forms**: React Hook Form 7.5
+- **Validation**: Zod 3.22
+- **HTTP Client**: Axios 1.6
 
-### 🏆 Key Achievements
-- 📈 **40% reduction** in procurement cycle time
-- 🛍️ **10,000+ SKUs** with real-time inventory management
-- ⚡ **99.5% uptime** with optimized performance
-- 👥 **500+ active suppliers** onboarded successfully
+### Backend
+- **Runtime**: Node.js 18+
+- **Framework**: Express.js 4.18
+- **Database**: MongoDB 5.0+
+- **ODM**: Mongoose 7.0
+- **Authentication**: JWT + Passport.js 0.7
+- **Payments**: Razorpay 2.9.2, Stripe 14.0
+- **Cloud Storage**: Cloudinary SDK
+- **Email**: Nodemailer 6.9
+- **Real-time**: Socket.io 4.5
+- **Security**: Helmet, CORS
+- **Logging**: Winston 3.10, Morgan 1.10
+- **Caching**: Redis 4.0+
 
----
-
-## ✨ Core Features
-
-<table>
-<tr>
-<td width="50%">
-
-### 🛒 **Smart Product Catalog**
-- Advanced categorization system
-- Bulk pricing & quantity discounts  
-- Technical specifications database
-- Multi-vendor comparison tools
-
-
-</td>
-<td width="50%">
-
-### 💳 **Enterprise-Grade Checkout**
-- Multi-payment gateway support
-- Credit terms & invoicing
-- Bulk order processing
-- Purchase order integration
-
-### 📊 **Analytics Dashboard**
-- Real-time order tracking
-- Procurement analytics
-- Supplier performance metrics
-- Cost optimization insights
-
-</td>
-</tr>
-</table>
-
----
-
-
----
-
-## 🛠️ Technology Arsenal
-
-<div align="center">
-
-### **Frontend Stack**
-![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
-![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
-![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
-![Bootstrap](https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white)
-
-### **Backend & Database**
-![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
-![Express.js](https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white)
-![MongoDB](https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white)
-![MySQL](https://img.shields.io/badge/MySQL-005C84?style=for-the-badge&logo=mysql&logoColor=white)
-
-### **Tools & Services**
-![AWS](https://img.shields.io/badge/AWS-FF9900?style=for-the-badge&logo=amazon-aws&logoColor=white)
-![Redis](https://img.shields.io/badge/Redis-DC382D?style=for-the-badge&logo=redis&logoColor=white)
-![Docker](https://img.shields.io/badge/Docker-2CA5E0?style=for-the-badge&logo=docker&logoColor=white)
-![Stripe](https://img.shields.io/badge/Stripe-626CD9?style=for-the-badge&logo=stripe&logoColor=white)
-
-</div>
+### DevOps
+- **Containerization**: Docker
+- **Orchestration**: Docker Compose
+- **Web Server**: Nginx
+- **CDN**: Cloudinary
+- **Monitoring**: Winston Logging
 
 ---
 
-## 🚀 Quick Start Guide
+## 📁 Project Structure
 
-### 📋 Prerequisites
-- Node.js (v14 or higher)
+```
+indibuy/
+├── frontend/                     # Next.js frontend application
+│   ├── src/
+│   │   ├── pages/              # Next.js pages and routes
+│   │   ├── components/         # React components
+│   │   ├── hooks/              # Custom React hooks
+│   │   ├── context/            # React Context API
+│   │   ├── utils/              # Utility functions
+│   │   ├── styles/             # Global styles
+│   │   └── public/             # Static assets
+│   ├── .env.example            # Environment template
+│   ├── next.config.js          # Next.js configuration
+│   ├── tailwind.config.js      # Tailwind configuration
+│   ├── package.json            # Dependencies
+│   └── README.md               # Frontend documentation
+│
+├── backend/                      # Express.js backend application
+│   ├── src/
+│   │   ├── models/             # MongoDB schemas (15 models)
+│   │   ├── controllers/        # Request handlers
+│   │   ├── routes/             # API routes
+│   │   ├── services/           # Business logic
+│   │   ├── middleware/         # Express middleware
+│   │   ├── config/             # Configuration files
+│   │   ├── utils/              # Helper functions
+│   │   ├── server.js           # Express server
+│   │   └── index.js            # Entry point
+│   ├── logs/                   # Application logs
+│   ├── tests/                  # Test files
+│   ├── scripts/                # Utility scripts
+│   ├── .env.example            # Environment template
+│   ├── package.json            # Dependencies
+│   └── README.md               # Backend documentation
+│
+├── docs/                        # Comprehensive documentation
+│   ├── API.md                  # API endpoints (40+ documented)
+│   ├── DATABASE.md             # Database schema
+│   ├── DEPLOYMENT.md           # Deployment guide
+│   ├── ARCHITECTURE.md         # System architecture
+│   └── SECURITY.md             # Security guidelines
+│
+├── docker-compose.yml          # Docker Compose configuration
+├── Dockerfile.frontend         # Frontend Docker image
+├── Dockerfile.backend          # Backend Docker image
+├── .gitignore                  # Git ignore rules
+├── CONTRIBUTING.md             # Contribution guidelines
+├── LICENSE                     # License information
+└── README.md                   # This file
+│   │   ├── middleware/ # Express middleware
+│   │   ├── services/  # Business logic
+│   │   ├── config/    # Configuration
+│   │   └── utils/     # Helper functions
+│   ├── package.json
+│   └── .env.example
+├── docs/               # Documentation
+├── docker-compose.yml  # Docker setup
+└── README.md
+```
+
+## 🛠️ Tech Stack
+
+### Frontend
+- **Framework**: Next.js 14+
+- **UI Library**: React 18+
+- **Styling**: Tailwind CSS + Framer Motion
+- **Component Library**: ShadCN UI
+- **State Management**: Context API + Redux (optional)
+- **HTTP Client**: Axios
+
+### Backend
+- **Runtime**: Node.js 18+
+- **Framework**: Express.js
+- **Database**: MongoDB (Primary) / PostgreSQL (Optional)
+- **Authentication**: JWT + Passport.js
+- **Payments**: Razorpay + Stripe SDKs
+- **Cloud Storage**: Cloudinary / AWS S3
+- **Real-time**: Socket.io
+
+### DevOps
+- **Containerization**: Docker
+- **Orchestration**: Docker Compose
+- **CI/CD**: GitHub Actions ready
+- **Hosting**: AWS/DigitalOcean ready
+
+## 🚀 Quick Start
+
+### Prerequisites
+- Node.js 18+
+- MongoDB (or PostgreSQL)
 - npm or yarn
-- MongoDB/MySQL database
-- Git
+- Docker (optional)
 
-### ⚡ Installation
+### Frontend Setup
 
 ```bash
-# 🔄 Clone the repository
-git clone https://github.com/yourusername/IndiBuy.git
-cd IndiBuy
-
-# 📦 Install dependencies
+cd frontend
 npm install
-
-# 🔧 Environment setup
-cp .env.example .env
-# Edit .env with your configuration
-
-# 🗄️ Database setup
-npm run db:migrate
-npm run db:seed
-
-# 🚀 Launch development server
 npm run dev
 ```
 
-### 🌐 Access Points
-- **🌟 Live Website:** https://indibuy.netlify.app/
+### Backend Setup
 
-
----
-
-## 📁 Project Architecture
-
-```
-📦 IndiBuy/
-├── 🎨 client/                 # Frontend application
-│   ├── src/
-│   │   ├── components/        # Reusable UI components
-│   │   ├── pages/            # Route components
-│   │   ├── hooks/            # Custom React hooks
-│   │   └── utils/            # Helper functions
-├── 🔧 server/                 # Backend API
-│   ├── controllers/          # Route handlers
-│   ├── models/               # Database models
-│   ├── middleware/           # Express middleware
-│   └── routes/               # API routes
-├── 🗄️ database/              # Database configurations
-└── 📖 docs/                  # Documentation
+```bash
+cd backend
+npm install
+cp .env.example .env
+# Update .env with your credentials
+npm run dev
 ```
 
----
+### Docker Compose
 
-## 🌟 Key Highlights
-
-<div align="center">
-
-```javascript
-const indiBuyImpact = {
-  performance: {
-    pageLoadTime: "< 2 seconds",
-    searchResults: "< 0.5 seconds",
-    uptime: "99.5%"
-  },
-  scale: {
-    products: "10,000+",
-    dailyOrders: "500+",
-    suppliers: "200+"
-  },
-  userExperience: {
-    mobileOptimized: true,
-    accessibilityScore: "95/100",
-    conversionRate: "12.5%"
-  }
-};
+```bash
+docker-compose up
 ```
 
-</div>
+## 📖 Documentation
+
+- [Frontend README](./frontend/README.md) - Frontend setup and architecture
+- [Backend README](./backend/README.md) - Backend API documentation
+- [Database Schema](./docs/DATABASE.md) - Complete database design
+- [API Documentation](./docs/API.md) - Detailed API endpoints
+- [Deployment Guide](./docs/DEPLOYMENT.md) - Production deployment
+- [Security Guide](./docs/SECURITY.md) - Security best practices
+
+## 🔑 Key Features Implemented
+
+### 1. User Authentication
+- Email/password login & signup
+- Google OAuth integration
+- Email verification
+- Password reset
+- Multi-role support (Buyer, Vendor, Admin, Delivery Partner)
+- JWT token management
+
+### 2. Product Management
+- Comprehensive product catalog
+- Advanced filtering & search
+- Product recommendations (AI)
+- 360° product preview
+- PDF brochure support
+- Stock management
+
+### 3. Vendor Management
+- Vendor onboarding & verification
+- Store customization
+- Inventory management
+- Analytics dashboard
+- Order management
+- Commission tracking
+
+### 4. E-Commerce Features
+- Shopping cart with persistent storage
+- Wishlist functionality
+- Quotation system
+- Bulk order management
+- Price comparison
+- Product comparison
+
+### 5. Payment Integration
+- Razorpay integration
+- Stripe integration
+- Cash on Delivery (COD)
+- Payment history
+- Invoice generation
+- Refund management
+
+### 6. Order Management
+- Order tracking (real-time)
+- Multi-status workflow
+- Delivery partner assignment
+- Live GPS tracking
+- OTP verification
+
+### 7. Admin Dashboard
+- User management
+- Vendor approval system
+- Product moderation
+- Analytics & reports
+- Banner management
+- Coupon management
+- Support ticket system
+
+### 8. Vendor Dashboard
+- Sales analytics
+- Order management
+- Revenue tracking
+- Customer messages
+- Inventory management
+- Performance metrics
+
+### 9. AI Features
+- Product recommendations
+- Smart search suggestions
+- AI chatbot
+- Demand forecasting
+- Invoice scanner
+
+### 10. Notification System
+- Email notifications
+- SMS alerts (Twilio ready)
+- Push notifications
+- In-app notifications
+- Event-based triggers
+
+## 🔒 Security Features
+
+- JWT-based authentication
+- Role-based access control (RBAC)
+- Input validation & sanitization
+- XSS & CSRF protection
+- SQL injection prevention
+- Rate limiting
+- Secure password hashing (bcrypt)
+- Environment variable management
+
+## 📊 Database Schema
+
+Complete database design for:
+- Users & Profiles
+- Products & Categories
+- Orders & Order Items
+- Payments & Transactions
+- Reviews & Ratings
+- Vendors & Store Info
+- Coupons & Discounts
+- Support Tickets
+- Quotations
+- Inventory
+- Notifications
+
+## 🚀 Deployment
+
+### Production Checklist
+- [ ] Set all environment variables
+- [ ] Configure database (MongoDB Atlas / RDS)
+- [ ] Set up payment gateways (Razorpay/Stripe)
+- [ ] Configure cloud storage (Cloudinary/S3)
+- [ ] Set up SSL certificates
+- [ ] Enable CORS properly
+- [ ] Configure CDN
+- [ ] Set up monitoring & logging
+- [ ] Enable rate limiting
+- [ ] Configure backup strategy
+
+### Deployment Options
+1. **AWS** - EC2 + RDS + S3 + CloudFront
+2. **DigitalOcean** - Droplets + Managed Database
+3. **Railway** - One-click deployment
+4. **Vercel** (Frontend) + Heroku/Railway (Backend)
+
+## 📱 Mobile App Ready
+
+Backend APIs are designed to support:
+- Native iOS/Android apps
+- React Native mobile clients
+- Flutter applications
+- Progressive Web App (PWA)
+
+## 🤝 API Endpoints
+
+### Authentication
+- `POST /api/auth/register` - User registration
+- `POST /api/auth/login` - User login
+- `POST /api/auth/google` - Google OAuth
+- `POST /api/auth/forgot-password` - Password reset
+- `GET /api/auth/verify` - Verify token
+
+### Products
+- `GET /api/products` - List products
+- `GET /api/products/:id` - Product details
+- `GET /api/products/search` - Search products
+- `POST /api/products` - Create product (Vendor)
+- `PUT /api/products/:id` - Update product
+- `DELETE /api/products/:id` - Delete product
+
+### Orders
+- `POST /api/orders` - Create order
+- `GET /api/orders` - User orders
+- `GET /api/orders/:id` - Order details
+- `PUT /api/orders/:id/status` - Update order status
+- `GET /api/orders/:id/tracking` - Live tracking
+
+### Payments
+- `POST /api/payments/initiate` - Initiate payment
+- `POST /api/payments/verify` - Verify payment
+- `GET /api/payments/history` - Payment history
+
+### Vendors
+- `GET /api/vendors` - List vendors
+- `GET /api/vendors/:id` - Vendor details
+- `POST /api/vendors` - Vendor registration
+- `GET /api/vendors/analytics` - Vendor analytics
+
+### Analytics
+- `GET /api/analytics/dashboard` - Dashboard data
+- `GET /api/analytics/sales` - Sales analytics
+- `GET /api/analytics/users` - User analytics
+
+## 🧪 Testing
+
+```bash
+# Frontend tests
+cd frontend
+npm run test
+
+# Backend tests
+cd backend
+npm run test
+```
+
+## 📝 License
+
+Proprietary - IndiBuy Platform
+
+## 🤝 Support
+
+For support, email: support@indibuy.com
+
+## 📞 Contact
+
+- Website: https://indibuy.com
+- Email: hello@indibuy.com
+- Support: support@indibuy.com
 
 ---
 
-## 🎭 Features Deep Dive
-
-
-### 🎯 **Business Intelligence**
-- 📊 Real-time analytics dashboard
-- 🔍 Advanced reporting tools
-- 💡 AI-powered insights
-- 📈 Sales forecasting
-- 👥 Customer behavior analysis
-
----
-
-
-
-
-
-### 🐛 Found a Bug?
-- Create an issue with detailed description
-- Include steps to reproduce
-- Add screenshots if applicable
-
-### 💡 Feature Requests
-- Check existing issues first
-- Use feature request template
-- Provide clear use case
-
----
-
-
----
-
-## 🙏 Acknowledgments
-
-- Industrial partners for valuable feedback
-- Open source community for amazing tools
-- Beta testers for rigorous testing
-
----
-
-<div align="center">
-
-### 🌟 **Star this repo if you find it useful!** 🌟
-
-)
-
-**Built with ❤️ by [RAMNIHAL](https://github.com/rvrnihal)**
-
-</div>
+**Built with ❤️ for Indian Industries**
