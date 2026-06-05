@@ -6,7 +6,10 @@
 ![React](https://img.shields.io/badge/React-18.2+-blue)
 ![MongoDB](https://img.shields.io/badge/MongoDB-5.0+-green)
 
+🔗 Live Demo: **[https://indibuy.vercel.app](https://indibuy.vercel.app)**
+
 A comprehensive, production-ready full-stack B2B e-commerce platform designed for industrial and construction products. Built with cutting-edge technologies and inspired by leading platforms like Amazon, Flipkart, Alibaba, and IndiaMART.
+
 
 ## 🎯 Overview
 
