@@ -122,3 +122,4 @@ ehthumbs.db
 # Git
 .git/
 .gitkeep
+.vercel

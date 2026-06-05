@@ -66,7 +66,7 @@ export default function Hero() {
                 Browse Products
               </Link>
               <Link
-                href="/vendor"
+                href="/register?role=vendor"
                 className="px-8 py-3 border-2 border-blue-600 text-blue-600 rounded-lg hover:bg-blue-50 transition"
               >
                 Become a Vendor

@@ -196,7 +196,7 @@ export default function ProfileDashboard() {
                           </div>
                         </motion.div>
                       ))}
-                      <Link href="/profile/orders">
+                      <Link href="/profile-orders">
                         <button className="w-full mt-4 px-4 py-2 text-blue-600 hover:bg-blue-50 rounded-lg font-semibold transition border border-blue-200">
                           View All Orders
                         </button>

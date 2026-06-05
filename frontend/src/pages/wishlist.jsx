@@ -1,13 +1,30 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
 import Layout from '../components/Layout';
 import { useWishlist } from '../context/WishlistContext';
+import { useCart } from '../context/CartContext';
 import { motion } from 'framer-motion';
 import { FaTrash, FaHeart, FaShoppingCart } from 'react-icons/fa';
 
 export default function WishlistPage() {
   const { wishlist, removeFromWishlist, clearWishlist } = useWishlist();
+  const { addItem } = useCart();
+  const [addedItems, setAddedItems] = useState({});
+
+  const handleAddToCart = (product) => {
+    addItem(product, 1);
+    setAddedItems(prev => ({
+      ...prev,
+      [product.id]: true
+    }));
+    setTimeout(() => {
+      setAddedItems(prev => ({
+        ...prev,
+        [product.id]: false
+      }));
+    }, 2000);
+  };
 
   if (wishlist.length === 0) {
     return (
@@ -58,19 +75,29 @@ export default function WishlistPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {wishlist.map((item, index) => (
                 <motion.div
-                  key={item.productId}
+                  key={item.id}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.1 }}
                   className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition"
                 >
-                  <div className="w-full h-48 bg-gray-200 flex items-center justify-center">
-                    <span className="text-gray-600">Product Image</span>
-                  </div>
+                  <Link href={`/product/${item.id}`}>
+                    <div className="relative h-48 overflow-hidden bg-gray-200 cursor-pointer">
+                      <img
+                        src={item.image}
+                        alt={item.name}
+                        className="w-full h-full object-cover hover:scale-110 transition"
+                      />
+                    </div>
+                  </Link>
 
                   <div className="p-4">
-                    <h3 className="font-bold text-lg text-gray-900 mb-1">{item.name}</h3>
-                    <p className="text-gray-600 text-sm mb-2">SKU: {item.productId}</p>
+                    <Link href={`/product/${item.id}`}>
+                      <h3 className="font-bold text-lg text-gray-900 mb-1 hover:text-blue-600 transition cursor-pointer line-clamp-1">
+                        {item.name}
+                      </h3>
+                    </Link>
+                    <p className="text-gray-600 text-sm mb-2">ID: {item.id}</p>
                     
                     <div className="flex justify-between items-center mb-4">
                       <p className="text-green-600 font-bold text-xl">₹{item.price.toLocaleString()}</p>
@@ -79,20 +106,26 @@ export default function WishlistPage() {
                       </span>
                     </div>
 
-                    <p className="text-xs text-gray-600 mb-3">Min Order: {item.minOrder} units</p>
+                    <p className="text-xs text-gray-600 mb-3">Min Order (MOQ): {item.moq || 1} units</p>
 
                     <div className="flex gap-2">
                       <motion.button
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
-                        className="flex-1 bg-green-600 hover:bg-green-700 text-white font-semibold py-2 rounded-lg flex items-center justify-center gap-2"
+                        onClick={() => handleAddToCart(item)}
+                        className={`flex-grow font-semibold py-2 rounded-lg flex items-center justify-center gap-2 transition duration-200 ${
+                          addedItems[item.id]
+                            ? 'bg-green-500 text-white'
+                            : 'bg-green-600 hover:bg-green-700 text-white'
+                        }`}
                       >
-                        <FaShoppingCart /> Add to Cart
+                        <FaShoppingCart />
+                        {addedItems[item.id] ? '✓ Added' : 'Add to Cart'}
                       </motion.button>
                       <motion.button
                         whileHover={{ scale: 1.1 }}
                         whileTap={{ scale: 0.95 }}
-                        onClick={() => removeFromWishlist(item.productId)}
+                        onClick={() => removeFromWishlist(item.id)}
                         className="bg-red-50 hover:bg-red-100 text-red-600 px-4 py-2 rounded-lg"
                       >
                         <FaTrash />

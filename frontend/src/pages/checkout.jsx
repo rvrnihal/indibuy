@@ -6,6 +6,7 @@ import { useAuth } from '../context/AuthContext';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { FaCheckCircle, FaArrowLeft, FaShoppingBag } from 'react-icons/fa';
+import { allProducts } from '../utils/products';
 
 export default function CheckoutPage() {
   const router = useRouter();
@@ -24,11 +25,51 @@ export default function CheckoutPage() {
     pincode: ''
   });
 
+  const [checkoutItems, setCheckoutItems] = useState([]);
+  const [checkoutSummary, setCheckoutSummary] = useState({ subtotal: 0, tax: 0, total: 0, delivery: 0 });
+
   useEffect(() => {
     if (!user) {
       router.push('/login');
     }
   }, [user]);
+
+  useEffect(() => {
+    if (router.isReady) {
+      const { productId, quantity } = router.query;
+      if (productId) {
+        const prodId = parseInt(productId);
+        const prod = allProducts.find(p => p.id === prodId);
+        if (prod) {
+          const qty = parseInt(quantity) || 1;
+          const sub = prod.price * qty;
+          const tx = Math.round(sub * 0.18);
+          const tot = sub + tx;
+          setCheckoutItems([{
+            id: prod.id,
+            name: prod.name,
+            price: prod.price,
+            quantity: qty
+          }]);
+          setCheckoutSummary({
+            subtotal: sub,
+            tax: tx,
+            total: tot,
+            delivery: 0
+          });
+        }
+      } else {
+        setCheckoutItems(cart);
+        const sum = getCartSummary(cart);
+        setCheckoutSummary({
+          subtotal: sum.subtotal,
+          tax: sum.tax,
+          total: sum.total,
+          delivery: sum.delivery
+        });
+      }
+    }
+  }, [router.isReady, router.query, cart]);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -57,11 +98,10 @@ export default function CheckoutPage() {
     setIsProcessing(true);
     
     setTimeout(() => {
-      const summary = getCartSummary(cart);
       const newOrder = {
         orderId: 'ORD-' + Date.now(),
-        items: cart,
-        total: summary.total,
+        items: checkoutItems,
+        total: checkoutSummary.total,
         address: formData,
         paymentMethod,
         status: 'confirmed',
@@ -71,12 +111,14 @@ export default function CheckoutPage() {
       addOrder(newOrder);
       setOrderId(newOrder.orderId);
       setOrderPlaced(true);
-      clearCart();
+      if (!router.query.productId) {
+        clearCart();
+      }
       setIsProcessing(false);
     }, 2000);
   };
 
-  const summary = getCartSummary(cart);
+  const summary = checkoutSummary;
 
   const paymentMethods = [
     { id: 'razorpay', name: 'Razorpay', icon: '💳' },
@@ -105,7 +147,7 @@ export default function CheckoutPage() {
               </div>
 
               <div className="space-y-2 mb-8 text-left">
-                <p><strong>Items:</strong> {cart.length} product(s)</p>
+                <p><strong>Items:</strong> {checkoutItems.length} product(s)</p>
                 <p><strong>Total Amount:</strong> ₹{summary.total.toLocaleString()}</p>
                 <p><strong>Payment Method:</strong> {paymentMethod || 'Not specified'}</p>
               </div>
@@ -124,7 +166,11 @@ export default function CheckoutPage() {
     );
   }
 
-  if (cart.length === 0) {
+  if (!router.isReady) {
+    return null;
+  }
+
+  if (checkoutItems.length === 0) {
     return (
       <Layout>
         <div className="min-h-screen bg-gray-50 pt-20 pb-10">
@@ -307,7 +353,7 @@ export default function CheckoutPage() {
               <h3 className="text-lg font-bold text-gray-900 mb-4">Order Summary</h3>
 
               <div className="space-y-3 pb-4 border-b">
-                {cart.map(item => (
+                {checkoutItems.map(item => (
                   <div key={item.id} className="flex justify-between text-sm">
                     <span className="text-gray-600">{item.name}</span>
                     <span className="font-semibold">₹{(item.price * item.quantity).toLocaleString()}</span>
